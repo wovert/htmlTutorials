@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+		<title>表格元素</title>
+		<style type="text/css">
+			/*
+				html元素比类名权重要低
+				tag 元素 < className类名
+			*/
+			td {
+				text-align: center;
+				background-color: gray;
+			}
+			th {
+				/*取消加粗*/
+				font-weight: normal;
+				background-color: yellow;
+			}
+
+			.teamName {
+				text-align: left;
+			}
+
+		</style>
+</head>
+<body>
+    <table border="1" style="width: 600px; height: 300px;">
+      <tr>
+          <th>排名</th>
+          <th>球队</th>
+          <th>场次</th>
+          <th>胜</th>
+          <th>平</th>
+          <th>负</th>
+          <th>进/失球</th>
+          <th>积分</th>
+      </tr>
+      <tr>
+				<td>1</td>
+				<td class="teamName">巴塞罗那</td>
+				<td>33</td>
+				<td>25</td>
+				<td>8</td>
+				<td>0</td>
+				<td>83/19</td>
+				<td>83</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="teamName">马德里竞技</td>
+        <td>33</td>
+        <td>21</td>
+        <td>8</td>
+        <td>4</td>
+        <td>54/18</td>
+        <td>71</td>
+			</tr>
+      <tr>
+				<td>3</td>
+				<td class="teamName">皇家马德里</td>
+				<td>33</td>
+				<td>21</td>
+				<td>8</td>
+				<td>5</td>
+				<td>80/36</td>
+				<td>68</td>
+			</tr>			      
+    </table>    
+</body>
+</html>
