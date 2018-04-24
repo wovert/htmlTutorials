@@ -33,15 +33,12 @@
 3. .inline-block 请浮动方法(margin 左右 auto 失效)
 4. 空标签清除浮动(IE6 最小高度19px; 解决后 IE6下还有2px 偏差)
 5. .br 清浮动 （不符合工作中：结构/样式/行为，三者分离的要求）
-6. 设置父元素样式：最佳解决方案
+6. 设置父元素(.clearfix)样式：最佳解决方案
 	+ `.clearfix:after {content:'';clear:both;display:block}`
 	+ IE6 下： `.clearfix { *zoom:1;}`
 		* zoom 缩放 : 触发 IE下 haslayout，使元素根据自身内容计算宽高。FF 不支持。
-
-
-
 7. overflow:hidden 清除浮动；
-问题：需要配合宽度或者 zomm 兼容 IE6/&
+	+ 问题：需要配合宽度或者 zomm 兼容 IE6/&
 
 # BFC- block formatting context 标准浏览器
 1. float 的值不为 none
@@ -56,5 +53,41 @@
 - zoom:(!normal) 放大
 	+ ！normal 指的是值为不正常时触发 hashlayout
 
+# position
+- IE6/7: filter: alpha(opacity=50) // 0-100
+- other: opacity: .5; // 0-1 (0完全透明)
+- IE6 不支持 fixed 固定定位
 
 
+# 兼容性
+1. H5 标签兼容
+- IE6/7 不兼容
+- [html5shiv.js](https://github.com/aFarkas/html5shiv) 库解决
+
+2. IE6: 元素浮动之后，能设置宽度的话就给元素加宽度。如果需要宽度是内容撑开，就给它里边的块元素加上浮动。
+- solution：.innerTag {float:right|left}
+
+3. IE6: 第一块元素浮动，第二块元素加 margin 值等于第一块元素。在 IE 6 下会有间隙问题。
+- solution：浮动解决间隙问题
+
+4. IE6: 子元素超出父元素宽高，会把父级的宽高撑开
+- solution: 不要子元素宽高高出父级宽高
+
+5. p 包含块元素嵌套规则
+- solution: p/hn/td 元素只能包含内联元素和内容，不能包含块元素
+
+6. margin 兼容性问题
+- 问题：margin-top 传递。父元素没有margin-top，子元素设置 margin-top 会影响到父元素margin-top。
+	+ solution：触发 BFC, 给父元素加边框或 overflow:hidden（border:1px），但 IE6 不能解决
+	+ solution: 触发 haslayout, zoom:1; 在 IE6解决 
+
+- 问题：兄弟元素上下 margin会叠加，不会累加。以元素最大的值 margin 显示
+	+ solution: 尽量使用同一方向的 margin。比如都设置 margin-top 或者 margin-bottom。
+
+7. display: inline-block;
+
+8. IE6 最小高度问题
+
+9. IE6 双边距
+
+10. 

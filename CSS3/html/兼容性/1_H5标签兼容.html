@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>在 IE6 下不支持 H5 标签</title>
+		<script src="js/html5shiv.js"></script>
+		<script>
+			document.createElement("header");
+			document.createElement("section");
+			document.createElement("footer");
+		</script>
+		<style>
+			header{
+				width: 200px;
+				height: 200px;
+				display: block; /* 默认不支持宽度，需要设置 block */
+				background-color: red;
+			}
+			section{
+				width: 150px;
+				height: 150px;
+				display: block;
+				background-color: yellow;
+			}
+			footer{
+				width: 100px;
+				height: 100px;
+				display: block;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<header>header</header>
+		<section>section</section>
+		<footer>footer</footer>
+	</body>
+</html>
