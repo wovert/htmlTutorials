@@ -84,10 +84,15 @@
 - 问题：兄弟元素上下 margin会叠加，不会累加。以元素最大的值 margin 显示
 	+ solution: 尽量使用同一方向的 margin。比如都设置 margin-top 或者 margin-bottom。
 
-7. display: inline-block;
+7. display: inline-block; IE6下 垂直显示问题
+- 问题：IE6 不支持inline-block
+- 解决：*display: inline; *zoom:1;
 
 8. IE6 最小高度问题
+- 问题：IE6 下height: 1px; 默认19px最小高度显示
+- 解决：overflow: hidden;
 
 9. IE6 双边距
+
 
 10. 
