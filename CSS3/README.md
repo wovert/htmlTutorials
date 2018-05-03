@@ -93,6 +93,11 @@
 - 解决：overflow: hidden;
 
 9. IE6 双边距
+- 问题：当元素**左浮动后**，在设置 margin-left 就会产生双倍边距
+- 解决(IE6/7)：*display: inline;
 
+10. li 里元素都浮动 li 在 IE6/7 下方会产生 4px 的间隙问题
+- 解决(IE6/7)：li {*vertical-align:top}
 
-10. 
+11. 浮动元素之间注释，导致多复制一个文字问题
+- 解决：
