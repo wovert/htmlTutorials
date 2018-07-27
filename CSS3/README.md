@@ -99,5 +99,11 @@
 10. li 里元素都浮动 li 在 IE6/7 下方会产生 4px 的间隙问题
 - 解决(IE6/7)：li {*vertical-align:top}
 
-11. 浮动元素之间注释，导致多复制一个文字问题
-- 解决：
+11. 两个浮动元素之间有注释或内联元素并且和父元素宽度相差不超过 3px，导致多复制一个文字问题
+- solution: 
+	+ 1. 清除两个浮动元素之间的注释或内联元素
+	+ 2. 与宽度相差 3px 或以上
+
+12. IE6/7 父级元素的 overflow:hidden 是包不住子级的 relative
+- solution: 父元素添加相对定位(*position: relative)
+
